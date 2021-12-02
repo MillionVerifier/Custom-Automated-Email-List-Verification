@@ -45,7 +45,7 @@
         - **"count" (integer):** The amount of active contacts in the list
 
 
-If your system only handles a single list per user, then the response should only contain a single list in the array. If your system doesn't use pagination and returns all the data for the request, then the "page" and "total_pages" both should be 1 and the **lists** array should contain all the data
+If your system only handles a single list per user, then the response should only contain a single list in the array. If your system doesn't use pagination and returns all the data for the request, then the **"page"** and **"total_pages"** both should be 1 and the **lists** array should contain all the data
 
 ## List endpoint
 
@@ -74,7 +74,7 @@ If your system only handles a single list per user, then the response should onl
 - **"count" (integer):** The amount of active contacts in the list
 - **"contacts" (string array):** An array of email addresses
 
-The maximum amount of contacts should be 10000 per page. If your system doesn't use pagination and returns all the data for the request, then the "page" and "total_pages" both should be 1 and the **"contacts"** array should contain all the data. This endpoint should only return the active contacts for the given list.
+The maximum amount of contacts should be 10000 per page. If your system doesn't use pagination and returns all the data for the request, then the **"page"** and **"total_pages"** both should be 1 and the **"contacts"** array should contain all the data. This endpoint should only return the active contacts for the given list.
 
 ## Action
 
@@ -97,7 +97,7 @@ The maximum amount of contacts should be 10000 per page. If your system doesn't 
 - **"action" (string enum):** The action that will be performed. Can be **"unsubscribe"** or **"delete"**
 - **"contacts" (string array):** The contact email addresses, which the action will be performed on.
 
-The request will be Content-Type: application/json. The endpoint should not send errors when email addresses, which doesn't exist anymore on the list are sent.
+The request will be Content-Type: application/json. The endpoint should not send errors when email addresses, which doesn't exist anymore on the list are sent in the request.
 
 - Response:
     - 201 empty response
