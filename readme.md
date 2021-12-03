@@ -1,7 +1,12 @@
 # General information:
 
 - All response must be Content-Type: application/json
-- Upon a succesful request 200 status code should be returned, with the given response examples for each endpoint shown below in the **Endpoints** section
+- Your system or API must support the following endpoints:
+    - **/get-lists**
+    - **/get-list-contacts**
+    - **/contacts-action**
+- You can read about the requirements and details of how each endpoint has to work in the **Endpoints** section
+- Upon a succesful request **200** status code should be returned, with the given response examples for each endpoint shown below in the **Endpoints** section
 - Upon error an appropriate status code should be returned, along with an error response, which describes the error:
  ```
     {
@@ -11,12 +16,12 @@
 
 # Endpoints
 
-
 ## Lists endpoint
-
-- Method: GET
+- Path: **/get-lists**
+- Method: **GET**
 - Request parameters (query):
-    - api_key (string): The API key that will be used for authorization
+    - **api_key (string):** The API key that will be used for authorization
+    - **page (integer):** The page that will be requested
 - Response:
 ```
 {   
@@ -47,12 +52,12 @@
 
 If your system only handles a single list per user, then the response should only contain a single list in the array. If your system doesn't use pagination and returns all the data for the request, then the **"page"** and **"total_pages"** both should be 1 and the **lists** array should contain all the data
 
-## List endpoint
-
-- Method: GET
+## List contacts endpoint
+- Path: **/get-list-contacts**
+- Method: **GET**
 - Request parameters (query):
-    - api_key (string): The API key that will be used for authorization
-    - list_id (string): The ID of the list that needs to be requested
+    - **api_key (string):** The API key that will be used for authorization
+    - **list_id (string):** The ID of the list whose contacts needs to be requested
 - Response:
 ```
 {
@@ -74,13 +79,13 @@ If your system only handles a single list per user, then the response should onl
 - **"count" (integer):** The amount of active contacts in the list
 - **"contacts" (string array):** An array of email addresses
 
-The maximum amount of contacts should be 10000 per page. If your system doesn't use pagination and returns all the data for the request, then the **"page"** and **"total_pages"** both should be 1 and the **"contacts"** array should contain all the data. This endpoint should only return the active contacts for the given list.
+The maximum amount of contacts should be **10000 per page**. If your system doesn't use pagination and returns all the data for the request, then the **"page"** and **"total_pages"** both should be 1 and the **"contacts"** array should contain all the data. This endpoint should only return the active contacts for the given list.
 
 ## Action
-
-- Method: POST
+- Path: **/contacts-action**
+- Method: **POST**
 - Request parameters (query):
-    - api_key (string): The API key that will be used for authorization
+    - **api_key (string):** The API key that will be used for authorization
 - Request parameters (body):
 ```
 {
