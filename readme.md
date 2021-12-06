@@ -2,6 +2,7 @@
 
 - All response must be Content-Type: application/json
 - Your system or API must support the following endpoints:
+    - **/ping**
     - **/get-lists**
     - **/get-list-contacts**
     - **/contacts-action**
@@ -15,6 +16,21 @@
 ```
 
 # Endpoints
+
+## Ping endpoint
+- Path: **/ping**
+- Method: **GET**
+- Request parameters (query):
+    - **api_key (string):** The API key that will be used for authorization
+- Response:
+```
+{
+    "success": true
+}
+```
+- **"success" (bool):** Whether the ping request was successful or not
+
+This endpoint is required to quickly check the health of the connection.
 
 ## Lists endpoint
 - Path: **/get-lists**
