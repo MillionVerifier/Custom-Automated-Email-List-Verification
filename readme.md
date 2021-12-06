@@ -1,3 +1,7 @@
+# Custom Automated Email List Verification
+- Verify all your emails every day and automatically remove bad emails with MillionVerifier's automated email list cleaning service: https://www.millionverifier.com/services/automated-email-verification-everclean
+- Connect any database or CRM.
+
 # General information:
 
 - All response must be Content-Type: application/json
