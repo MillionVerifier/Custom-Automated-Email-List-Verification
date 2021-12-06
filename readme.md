@@ -74,6 +74,7 @@ If your system only handles a single list per user, then the response should onl
 - Request parameters (query):
     - **api_key (string):** The API key that will be used for authorization
     - **list_id (string):** The ID of the list whose contacts needs to be requested
+    - **page (integer):** The page that will be request
 - Response:
 ```
 {
